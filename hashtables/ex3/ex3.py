@@ -2,7 +2,23 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # 1. Loop through each list and count the unique 
+    # instance of each number found
+    #
+    # 2. Find the numbers that have a count equal to
+    # the number of arrays
+    counter = {}
+    for lst in arrays:
+        for item in lst:
+            if item not in counter:
+                counter[item] = 1
+            else:
+                counter[item] += 1
+
+    result = []
+    for item in counter:
+        if counter[item] == len(arrays):
+            result.append(item)
 
     return result
 
